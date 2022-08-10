@@ -23,6 +23,7 @@ public class Grades {
         grades.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
                 GradeEditorPage();
             }
         });
@@ -78,6 +79,7 @@ public class Grades {
         c1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
                 CourseModifier(1);
             }
         });
@@ -85,6 +87,7 @@ public class Grades {
         c2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
                 CourseModifier(2);
             }
         });
@@ -92,6 +95,7 @@ public class Grades {
         c3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
                 CourseModifier(3);
             }
         });
@@ -99,6 +103,7 @@ public class Grades {
         c4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
                 CourseModifier(4);
             }
         });
@@ -106,6 +111,7 @@ public class Grades {
         c5.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
                 CourseModifier(5);
             }
         });
@@ -113,6 +119,7 @@ public class Grades {
         c6.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
                 CourseModifier(6);
             }
         });
@@ -140,6 +147,7 @@ public class Grades {
         goBack.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
                 mainPage();
             }
         });
@@ -168,6 +176,7 @@ public class Grades {
         goBack.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
                 GradeEditorPage();
             }
         });
