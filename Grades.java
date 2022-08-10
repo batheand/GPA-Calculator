@@ -14,7 +14,7 @@ public class Grades {
         JLabel trademark = new JLabel("  Has been trademarked by Batheand Inc.™");
         ownership.setBounds(199,29,300,20);
         trademark.setBounds(199,49,300,20);
-        JButton calculate = new JButton("Calculate!");
+        JButton calculate = new JButton("Useless Button!");
         JButton grades = new JButton("Grades");
         frame.setForeground(Color.black);
         grades.setBounds(319,219,80,20);
@@ -45,12 +45,12 @@ public class Grades {
         //JTable courses = new JTable(3,2);
 
         String [] cNames = new String[6];
-        cNames[0] = "CMPE114";
-        cNames[1] = "MATH102";
-        cNames[2] = "ENG102";
-        cNames[3] = "ECON110";
-        cNames[4] = "HIST102";
-        cNames[5] = "PHYS106";
+        cNames[0] = "OPTION 1";
+        cNames[1] = "OPTION 2";
+        cNames[2] = "OPTION 3";
+        cNames[3] = "OPTION 4";
+        cNames[4] = "OPTION 5";
+        cNames[5] = "OPTION 6";
 
         int courseNum;
 
@@ -190,7 +190,7 @@ public class Grades {
 
         switch (courseNum) {
             case 1:
-                Cmpe114 cmpe = new Cmpe114();
+                
 
                 break;
             case 2:
