@@ -14,8 +14,8 @@ public class Grades {
         JLabel trademark = new JLabel("  Has been trademarked by Batheand Inc.™");
         ownership.setBounds(199,29,300,20);
         trademark.setBounds(199,49,300,20);
-        JButton calculate = new JButton("Useless Button!");
-        JButton grades = new JButton("Grades");
+        JButton calculate = new JButton("By Number Grades");
+        JButton grades = new JButton("By Letter Grades");
         frame.setForeground(Color.black);
         grades.setBounds(319,219,80,20);
         frame.setSize(700,670);
@@ -24,7 +24,15 @@ public class Grades {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                GradeEditorPage();
+                byLetter();
+            }
+        });
+
+        calculate.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
+                byNumbers();
             }
         });
 
@@ -33,54 +41,43 @@ public class Grades {
         frame.add(calculate);
         frame.add(grades);
 
+        
+
         frame.setLayout(null);
         frame.setVisible(true);
 
     }
-    public void GradeEditorPage() {
+
+    public void byNumbers() {
         JFrame frame = new JFrame("Grade Calculator");
         JLabel ownership = new JLabel("This Program is a Property of Batuhan Yıldız.");
         JLabel trademark = new JLabel("  Has been trademarked by Batheand Inc.™");
         JLabel instructions = new JLabel("PLease select the course you want to modify");
-        //JTable courses = new JTable(3,2);
 
-        String [] cNames = new String[6];
-        cNames[0] = "OPTION 1";
-        cNames[1] = "OPTION 2";
-        cNames[2] = "OPTION 3";
-        cNames[3] = "OPTION 4";
-        cNames[4] = "OPTION 5";
-        cNames[5] = "OPTION 6";
+        frame.setSize(700,670);
+        ownership.setBounds(199,29,300,20);
+        trademark.setBounds(199,49,300,20);
 
-        int courseNum;
+        frame.add(ownership);
+        frame.add(trademark);
+
+        
+
+        String [] cNames = new String[2];
+        cNames[0] = "Out of 4";
+        cNames[1] = "Out of 100";
 
         JButton c1 = new JButton(cNames[0]);
         JButton c2 = new JButton(cNames[1]);
-        JButton c3 = new JButton(cNames[2]);
-        JButton c4 = new JButton(cNames[3]);
-        JButton c5 = new JButton(cNames[4]);
-        JButton c6 = new JButton(cNames[5]);
 
         c1.setBounds(279,99,70,20);
         c2.setBounds(279,129,70,20);
-        c3.setBounds(279,159,70,20);
-        c4.setBounds(349,99,70,20);
-        c5.setBounds(349,129,70,20);
-        c6.setBounds(349,159,70,20);
-
-        frame.add(c1);
-        frame.add(c2);
-        frame.add(c3);
-        frame.add(c4);
-        frame.add(c5);
-        frame.add(c6);
-
 
         c1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                CourseModifier(1);
+                byNumberCalculator(1);
             }
         });
 
@@ -88,7 +85,71 @@ public class Grades {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                CourseModifier(2);
+                byNumberCalculator(2);
+            }
+        });
+
+        JButton goBack = new JButton("Back to main page.");
+        goBack.setBounds(19,19,99,20);
+        goBack.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
+                mainPage();
+            }
+        });
+
+        frame.add(c1);
+        frame.add(c2);
+        frame.add(goBack);
+
+        frame.setLayout(null);
+        frame.setVisible(true);
+    }
+
+
+    public void byLetter() {
+        JFrame frame = new JFrame("Grade Calculator");
+        JLabel ownership = new JLabel("This Program is a Property of Batuhan Yıldız.");
+        JLabel trademark = new JLabel("  Has been trademarked by Batheand Inc.™");
+        JLabel instructions = new JLabel("PLease select the course you want to modify");
+        //JTable courses = new JTable(3,2);
+
+        String [] cNames = new String[3];
+        cNames[0] = "A, B, C";
+        cNames[1] = "A+, A, A-";
+        cNames[2] = "AA, AB, BB";
+        
+
+        int courseNum;
+
+        JButton c1 = new JButton(cNames[0]);
+        JButton c2 = new JButton(cNames[1]);
+        JButton c3 = new JButton(cNames[2]);
+        
+
+        c1.setBounds(279,99,70,20);
+        c2.setBounds(279,129,70,20);
+        c3.setBounds(279,159,70,20);
+        
+        frame.add(c1);
+        frame.add(c2);
+        frame.add(c3);
+        
+
+        c1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
+                byLetterCalculator(1);
+            }
+        });
+
+        c2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
+                byLetterCalculator(2);
             }
         });
 
@@ -96,33 +157,11 @@ public class Grades {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                CourseModifier(3);
+                byLetterCalculator(3);
             }
         });
 
-        c4.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                CourseModifier(4);
-            }
-        });
-
-        c5.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                CourseModifier(5);
-            }
-        });
-
-        c6.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                CourseModifier(6);
-            }
-        });
+        
 
 
     /*
@@ -160,7 +199,7 @@ public class Grades {
 
     }
 
-    public void CourseModifier(int courseNum) {
+    public void byLetterCalculator(int courseNum) {
         JFrame frame = new JFrame("Grade Calculator");
         JLabel ownership = new JLabel("This Program is a Property of Batuhan Yıldız.");
         JLabel trademark = new JLabel("  Has been trademarked by Batheand Inc.™");
@@ -177,7 +216,7 @@ public class Grades {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                GradeEditorPage();
+                byLetter();
             }
         });
 
@@ -189,22 +228,51 @@ public class Grades {
         frame.setVisible(true);
 
         switch (courseNum) {
-            case 1:
-                
-
+            case 1: 
                 break;
             case 2:
                 break;
             case 3:
                 break;
-            case 4:
+            default:
+        }
+    }
+
+    public void byNumberCalculator(int courseNum) {
+        JFrame frame = new JFrame("Grade Calculator");
+        JLabel ownership = new JLabel("This Program is a Property of Batuhan Yıldız.");
+        JLabel trademark = new JLabel("  Has been trademarked by Batheand Inc.™");
+        JButton goBack = new JButton("Back to main page.");
+
+
+
+        ownership.setBounds(199,29,300,20);
+        trademark.setBounds(199,49,300,20);
+        frame.setSize(700,670);
+        goBack.setBounds(19,19,99,20);
+
+        goBack.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
+                byNumbers();
+            }
+        });
+
+        switch (courseNum) {
+            case 1:
                 break;
-            case 5:
-                break;
-            case 6:
+            case 2:
                 break;
             default:
         }
+
+        frame.add(ownership);
+        frame.add(trademark);
+        frame.add(goBack);
+
+        frame.setLayout(null);
+        frame.setVisible(true);
     }
     public static void main(String[] args) {
         Grades x = new Grades();
