@@ -11,7 +11,7 @@ public class Grades {
     public void mainPage() {
         JFrame frame = new JFrame("Grade Calculator");
         JLabel ownership = new JLabel("This Program is a Property of Batuhan Yıldız & Can Mızraklı.");
-        JLabel trademark = new JLabel("  Has been trademarked by Batheand & Mızraklı Inc.™");
+        JLabel trademark = new JLabel("Has been trademarked by Batheand & Mızraklı Inc.™");
         ownership.setBounds(199,29,500,20);
         trademark.setBounds(199,49,500,20);
         JButton calculate = new JButton("By Number Grades");
@@ -50,13 +50,13 @@ public class Grades {
 
     public void byNumbers() {
         JFrame frame = new JFrame("Grade Calculator");
-        JLabel ownership = new JLabel("This Program is a Property of Batuhan Yıldız.");
-        JLabel trademark = new JLabel("  Has been trademarked by Batheand Inc.™");
-        JLabel instructions = new JLabel("PLease select the course you want to modify");
+        JLabel ownership = new JLabel("This Program is a Property of Batuhan Yıldız & Can Mızraklı.");
+        JLabel trademark = new JLabel("Has been trademarked by Batheand & Mızraklı Inc.™");
+        JLabel instructions = new JLabel("Please select the course you want to modify");
 
         frame.setSize(700,670);
-        ownership.setBounds(199,29,300,20);
-        trademark.setBounds(199,49,300,20);
+        ownership.setBounds(199,29,500,20);
+        trademark.setBounds(199,49,500,20);
 
         frame.add(ownership);
         frame.add(trademark);
@@ -110,15 +110,15 @@ public class Grades {
 
     public void byLetter() {
         JFrame frame = new JFrame("Grade Calculator");
-        JLabel ownership = new JLabel("This Program is a Property of Batuhan Yıldız.");
-        JLabel trademark = new JLabel("  Has been trademarked by Batheand Inc.™");
-        JLabel instructions = new JLabel("PLease select the course you want to modify");
+        JLabel ownership = new JLabel("This Program is a Property of Batuhan Yıldız & Can Mızraklı.");
+        JLabel trademark = new JLabel(" Has been trademarked by Batheand & Mızraklı Inc.™");
+        JLabel instructions = new JLabel("Please select the course you want to modify");
         //JTable courses = new JTable(3,2);
 
         String [] cNames = new String[3];
-        cNames[0] = "A, B, C";
-        cNames[1] = "A+, A, A-";
-        cNames[2] = "AA, AB, BB";
+        cNames[0] = "AA, AB, BA, BB...";
+        cNames[1] = "A, A-, B+, B...";
+        cNames[2] = "AA, BA, BB, CB...";
         
 
         int courseNum;
@@ -128,9 +128,9 @@ public class Grades {
         JButton c3 = new JButton(cNames[2]);
         
 
-        c1.setBounds(279,99,70,20);
-        c2.setBounds(279,129,70,20);
-        c3.setBounds(279,159,70,20);
+        c1.setBounds(279,99,110,20);
+        c2.setBounds(279,129,110,20);
+        c3.setBounds(279,159,110,20);
         
         frame.add(c1);
         frame.add(c2);
@@ -176,8 +176,8 @@ public class Grades {
 
      */
         instructions.setBounds(199,199,300,20);
-        ownership.setBounds(199,29,300,20);
-        trademark.setBounds(199,49,300,20);
+        ownership.setBounds(199,29,500,20);
+        trademark.setBounds(199,49,500,20);
         frame.setSize(700,670);
         frame.add(ownership);
         frame.add(trademark);
@@ -201,14 +201,14 @@ public class Grades {
 
     public void byLetterCalculator(int courseNum) {
         JFrame frame = new JFrame("Grade Calculator");
-        JLabel ownership = new JLabel("This Program is a Property of Batuhan Yıldız.");
-        JLabel trademark = new JLabel("  Has been trademarked by Batheand Inc.™");
+        JLabel ownership = new JLabel("This Program is a Property of Batuhan Yıldız & Can Mızraklı.");
+        JLabel trademark = new JLabel("  Has been trademarked by Batheand & Mızraklı Inc.™");
         JButton goBack = new JButton("Back to main page.");
+        
 
 
-
-        ownership.setBounds(199,29,300,20);
-        trademark.setBounds(199,49,300,20);
+        ownership.setBounds(199,29,500,20);
+        trademark.setBounds(199,49,500,20);
         frame.setSize(700,670);
         goBack.setBounds(19,19,99,20);
 
@@ -242,14 +242,14 @@ public class Grades {
 
     public void byNumberCalculator(int courseNum) {
         JFrame frame = new JFrame("Grade Calculator");
-        JLabel ownership = new JLabel("This Program is a Property of Batuhan Yıldız.");
-        JLabel trademark = new JLabel("  Has been trademarked by Batheand Inc.™");
+        JLabel ownership = new JLabel("This Program is a Property of Batuhan Yıldız & Can Mızraklı.");
+        JLabel trademark = new JLabel("  Has been trademarked by Batheand Can Mızraklı Inc.™");
         JButton goBack = new JButton("Back to main page.");
         JButton calculate = new JButton("Calculate!");
 
 
-        ownership.setBounds(199,29,300,20);
-        trademark.setBounds(199,49,300,20);
+        ownership.setBounds(199,29,500,20);
+        trademark.setBounds(199,49,500,20);
         frame.setSize(700,670);
         goBack.setBounds(19,19,99,20);
         calculate.setBounds(389,299,100,20);
