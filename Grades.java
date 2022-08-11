@@ -212,13 +212,7 @@ public class Grades {
         frame.setSize(700,670);
         goBack.setBounds(19,19,99,20);
 
-        goBack.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                byLetter();
-            }
-        });
+        
 
         frame.add(ownership);
         frame.add(trademark);
@@ -226,6 +220,14 @@ public class Grades {
 
         frame.setLayout(null);
         frame.setVisible(true);
+
+        goBack.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
+                byLetter();
+            }
+        });
 
         switch (courseNum) {
             case 1: 
@@ -243,13 +245,14 @@ public class Grades {
         JLabel ownership = new JLabel("This Program is a Property of Batuhan Yıldız.");
         JLabel trademark = new JLabel("  Has been trademarked by Batheand Inc.™");
         JButton goBack = new JButton("Back to main page.");
-
+        JButton calculate = new JButton("Calculate!");
 
 
         ownership.setBounds(199,29,300,20);
         trademark.setBounds(199,49,300,20);
         frame.setSize(700,670);
         goBack.setBounds(19,19,99,20);
+        calculate.setBounds(389,299,100,20);
 
         goBack.addActionListener(new ActionListener() {
             @Override
@@ -259,20 +262,164 @@ public class Grades {
             }
         });
 
-        switch (courseNum) {
-            case 1:
-                break;
-            case 2:
-                break;
-            default:
+        String [] Credit = new String[8];
+        for(int i=0; i<8; i++) {
+            Credit[i] = "Enter The Credit Of The Class";
         }
+        String [] GPA = new String[8];
+        for(int i=0; i<8; i++) {
+            GPA[i] = "Enter The GPA Of The Class";
+        }
+        
+        JTextField field1a = new JTextField();
+        JTextField field2a = new JTextField();
+        JTextField field3a = new JTextField();
+        JTextField field4a = new JTextField();
+        JTextField field5a = new JTextField();
+        JTextField field6a = new JTextField();
+        JTextField field7a = new JTextField();
+        JTextField field8a = new JTextField();
 
+        field1a.setText(Credit[1]);
+        field2a.setText(Credit[2]);
+        field3a.setText(Credit[3]);
+        field4a.setText(Credit[4]);
+        field5a.setText(Credit[5]);
+        field6a.setText(Credit[6]);
+        field7a.setText(Credit[7]);
+        field8a.setText(Credit[8]);
+
+        JTextField field1b = new JTextField();
+        JTextField field2b = new JTextField();
+        JTextField field3b = new JTextField();
+        JTextField field4b = new JTextField();
+        JTextField field5b = new JTextField();
+        JTextField field6b = new JTextField();
+        JTextField field7b = new JTextField();
+        JTextField field8b = new JTextField();
+
+        field1b.setText(GPA[1]);
+        field2b.setText(GPA[2]);
+        field3b.setText(GPA[3]);
+        field4b.setText(GPA[4]);
+        field5b.setText(GPA[5]);
+        field6b.setText(GPA[6]);
+        field7b.setText(GPA[7]);
+        field8b.setText(GPA[8]);
+        /* 
+        field1a.setBounds(279,99,70,20);
+        field2a.setBounds(279,119,70,20);
+        field3a.setBounds(279,139,70,20);
+        field4a.setBounds(279,99,70,20);
+        field5a.setBounds(279,119,70,20);
+        field6a.setBounds(279,139,70,20);
+        field7a.setBounds(279,99,70,20);
+        field8a.setBounds(279,119,70,20);
+
+        field1b.setBounds(349,99,70,20);
+        field2b.setBounds(349,119,70,20);
+        field3b.setBounds(349,139,70,20);
+        field4b.setBounds(349,99,70,20);
+        field5b.setBounds(349,119,70,20);
+        field6b.setBounds(349,139,70,20);
+        field7b.setBounds(349,99,70,20);
+        field8b.setBounds(349,119,70,20);
+        */
+        /*
+        frame.add(field1a);
+        frame.add(field2a);
+        frame.add(field3a);
+        frame.add(field4a);
+        frame.add(field5a);
+        frame.add(field6a);
+        frame.add(field7a);
+        frame.add(field8a);
+
+        frame.add(field1b);
+        frame.add(field2b);
+        frame.add(field3b);
+        frame.add(field4b);
+        frame.add(field5b);
+        frame.add(field6b);
+        frame.add(field7b);
+        frame.add(field8b);
+        */
+        
+
+        frame.add(calculate);
         frame.add(ownership);
         frame.add(trademark);
         frame.add(goBack);
 
+        frame.setForeground(Color.black);
+
         frame.setLayout(null);
         frame.setVisible(true);
+
+        switch (courseNum) {
+            case 1:
+            /* 
+                calculate.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        int [] credits = new int [8];
+                        int [] gpas = new int [8];
+                        int [] weightedGpas = new int [8] ;
+                        int totalWeightedGpa = 0, totalCredits = 0;
+                        double finalgpa;
+
+
+                        credits[0] = Integer.parseInt(field1a.getText());
+                        credits[1] = Integer.parseInt(field2a.getText());
+                        credits[2] = Integer.parseInt(field3a.getText());
+                        credits[3] = Integer.parseInt(field4a.getText());
+                        credits[4] = Integer.parseInt(field5a.getText());
+                        credits[5] = Integer.parseInt(field6a.getText());
+                        credits[6] = Integer.parseInt(field7a.getText());
+                        credits[7] = Integer.parseInt(field8a.getText());
+
+                        for(int i = 0; i<8; i++) {
+                            
+                            totalCredits = totalCredits + credits[i];
+                        }
+
+                        gpas[0] = Integer.parseInt(field1b.getText());
+                        gpas[1] = Integer.parseInt(field2b.getText());
+                        gpas[2] = Integer.parseInt(field3b.getText());
+                        gpas[3] = Integer.parseInt(field4b.getText());
+                        gpas[4] = Integer.parseInt(field5b.getText());
+                        gpas[5] = Integer.parseInt(field6b.getText());
+                        gpas[6] = Integer.parseInt(field7b.getText());
+                        gpas[7] = Integer.parseInt(field8b.getText());
+
+                        for(int i = 0; i<8; i++) {
+                            weightedGpas[i] = credits[i] * gpas[i];
+                            totalWeightedGpa = totalWeightedGpa + weightedGpas[i];
+                        }
+
+                        finalgpa = totalWeightedGpa/totalCredits;
+                        JLabel answer = new JLabel("Your Calculated GPA is: " + finalgpa);
+                        answer.setBounds(419,249,200,20);
+                        frame.add(answer);
+
+                    }
+                });
+                */
+                break;
+            case 2:
+                goBack.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        frame.setVisible(false);
+                        byLetter();
+                    }
+                });
+                break;
+            default:
+        }
+
+       
+        
     }
     public static void main(String[] args) {
         Grades x = new Grades();
