@@ -10,10 +10,10 @@ public class Grades {
 
     public void mainPage() {
         JFrame frame = new JFrame("Grade Calculator");
-        JLabel ownership = new JLabel("This Program is a Property of Batuhan Yıldız.");
-        JLabel trademark = new JLabel("  Has been trademarked by Batheand Inc.™");
-        ownership.setBounds(199,29,300,20);
-        trademark.setBounds(199,49,300,20);
+        JLabel ownership = new JLabel("This Program is a Property of Batuhan Yıldız & Can Mızraklı.");
+        JLabel trademark = new JLabel("  Has been trademarked by Batheand & Mızraklı Inc.™");
+        ownership.setBounds(199,29,500,20);
+        trademark.setBounds(199,49,500,20);
         JButton calculate = new JButton("By Number Grades");
         JButton grades = new JButton("By Letter Grades");
         frame.setForeground(Color.black);
