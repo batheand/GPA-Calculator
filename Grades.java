@@ -11,16 +11,19 @@ public class Grades {
     public void mainPage() {
         JFrame frame = new JFrame("Grade Calculator");
         JLabel ownership = new JLabel("This Program is a Property of Batuhan Yıldız & Can Mızraklı.");
-        JLabel trademark = new JLabel("Has been trademarked by Batheand & Mızraklı Inc.™");
+        JLabel trademark = new JLabel(" Has been trademarked by Batheand & Mızraklı Inc.™");
         ownership.setBounds(199,29,500,20);
         trademark.setBounds(199,49,500,20);
         JButton calculate = new JButton("By Number Grades");
         JButton grades = new JButton("By Letter Grades");
         frame.setForeground(Color.black);
-        grades.setBounds(319,219,80,20);
+        grades.setBounds(319,219,120,20);
         frame.setSize(700,670);
-        calculate.setBounds(319,249,80,20);
+        calculate.setBounds(319,249,120,20);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setResizable(false);
+        ImageIcon image = new ImageIcon("calc.png");
+        frame.setIconImage(image.getImage());
         grades.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -52,7 +55,7 @@ public class Grades {
     public void byNumbers() {
         JFrame frame = new JFrame("Grade Calculator");
         JLabel ownership = new JLabel("This Program is a Property of Batuhan Yıldız & Can Mızraklı.");
-        JLabel trademark = new JLabel("Has been trademarked by Batheand & Mızraklı Inc.™");
+        JLabel trademark = new JLabel(" Has been trademarked by Batheand & Mızraklı Inc.™");
         JLabel instructions = new JLabel("Please select the course you want to modify");
 
         frame.setSize(700,670);
@@ -71,8 +74,8 @@ public class Grades {
         JButton c1 = new JButton(cNames[0]);
         JButton c2 = new JButton(cNames[1]);
 
-        c1.setBounds(279,99,70,20);
-        c2.setBounds(279,129,70,20);
+        c1.setBounds(279,99,90,20);
+        c2.setBounds(279,129,90,20);
 
         c1.addActionListener(new ActionListener() {
             @Override
