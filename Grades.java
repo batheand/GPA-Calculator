@@ -20,6 +20,7 @@ public class Grades {
         grades.setBounds(319,219,80,20);
         frame.setSize(700,670);
         calculate.setBounds(319,249,80,20);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         grades.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
