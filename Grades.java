@@ -1,3 +1,8 @@
+/*incomplete ui
+ * abondened
+ * will switch focus on terminal usage
+ */
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -425,9 +430,6 @@ public class Grades {
        
         
     }
-    public static void main(String[] args) {
-        Grades x = new Grades();
-        x.mainPage();
-    }
+    
 
 }
