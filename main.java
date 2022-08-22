@@ -1,6 +1,28 @@
 import java.util.*;
 
+
 public class main {
+    
+    public static void main(String[] args) {
+        startMenu();
+    }
+
+    public static void startMenu() {
+        Scanner stdin = new Scanner(System.in);
+        System.out.println("Would you like to calculate using numbers or letters? Type N to calculate with numbers or type L to calculate with numbers");
+        String type = stdin.nextLine();
+        if (type.equalsIgnoreCase("N")) {
+            byNumber();
+        } else if (type.equalsIgnoreCase("L")) {
+            System.out.println("byLetter();");
+        } else {
+            System.out.println("WRONG INPUT! TRY AGAIN!!!!");
+            startMenu();
+        }
+    }
+
+
+
     public static void byNumber() {
         Scanner stdin = new Scanner(System.in);
         System.out.println("Would you like to calculate out of 4 or 100? Type 4 for out of 4 or type 100 for out of 100");
@@ -24,7 +46,5 @@ public class main {
         double result = totalWeightedGPA/totalWeight;
         System.out.println("Your Average Is: " + result);
     }
-    public static void main(String[] args) {
-        byNumber();
-    }
+
 }
