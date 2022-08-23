@@ -138,7 +138,7 @@ public class main {
     
     }
 
-    public static void transformer(String[] singleGrades, int classNo){
+    public static transformer(String[] singleGrades, int classNo){
         String gradeStr = " ";
         double gradeVal = 0;
         for(int i = 0; i<classNo; i++){
@@ -202,7 +202,8 @@ public class main {
             
         }
         
-        
+        return double[] letterToNum;
+
     }
 
     public static void startDouble() {
