@@ -138,11 +138,12 @@ public class main {
     
     }
 
-    public static transformer(String[] singleGrades, int classNo){
+    public static double[] transformer(String[] singleGrades, int classNo){
         String gradeStr = " ";
         double gradeVal = 0;
+        double[] letterToNum = new double[classNo];
         for(int i = 0; i<classNo; i++){
-            double[] letterToNum = new double[classNo];
+            
             switch (gradeStr) {
             case "A": 
                 gradeVal = 4.0;
@@ -202,7 +203,8 @@ public class main {
             
         }
         
-        return double[] letterToNum;
+        
+        return letterToNum;
 
     }
 
