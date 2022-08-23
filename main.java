@@ -9,7 +9,7 @@ public class main {
 
     public static void startMenu() {
         Scanner stdin = new Scanner(System.in);
-        System.out.println("Would you like to calculate using numbers or letters? Type N to calculate with numbers or type L to calculate with numbers");
+        System.out.println("Would you like to calculate using numbers or letters? Type N to calculate with numbers or type L to calculate with letters");
         String type = stdin.nextLine();
         if (type.equalsIgnoreCase("N")) {
             byNumber();
