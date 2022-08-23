@@ -78,11 +78,12 @@ public class main {
         for (int i = 0; i<classNo; i++){
             allCred[i] = scan.nextInt();
         }
-        System.out.println("Please enter your grades in the same order as the credits you entered beforehand");
+        System.out.println("Please enter your letter grades in the same order as the credits you entered beforehand");
         String singleGrades[] = new String [classNo];
         for (int i = 0; i<classNo; i++){
             singleGrades[i] = scan.next();
         }
+        
 
         switch (gradeStr) {
             case "A": 
@@ -128,7 +129,7 @@ public class main {
         }
 
 
-        for (int i = 0; i<classNo; i++) {
+        for (int i = 0; i<classNo; i++) {   // 
             
         }
 
