@@ -65,10 +65,7 @@ public class main {
         }
     }
 
-    private static void startSingle() {
-        
-        String gradeStr = " ";
-        double gradeVal = 0;
+    public static void startSingle() {
         
         Scanner scan = new Scanner(System.in);
         System.out.println("Please enter the number of classes you have");
@@ -84,6 +81,8 @@ public class main {
             singleGrades[i] = scan.next();
         }
         
+      /*  String gradeStr = " ";
+        double gradeVal = 0;
 
         switch (gradeStr) {
             case "A": 
@@ -126,20 +125,88 @@ public class main {
                 gradeVal = 0;
                 break;      
                 
-        }
+        } */ 
 
 
-        for (int i = 0; i<classNo; i++) {   // 
+       /* for (int i = 0; i<classNo; i++) {   // 
             
         }
 
-        for (int i=0; i<classNo; i++) {
+         for (int i=0; i<classNo; i++) {
         double finalTotal = (allCred[i]*singleGrades[i]); // her dersin kredisi * o dersten alınan not değerlerinin toplamı
-        }
+        } */
     
     }
 
-    private static void startDouble() {
+    public static transformer(String[] singleGrades, int classNo){
+        String gradeStr = " ";
+        double gradeVal = 0;
+        for(int i = 0; i<classNo; i++){
+            double[] letterToNum = new double[classNo];
+            switch (gradeStr) {
+            case "A": 
+                gradeVal = 4.0;
+                letterToNum[i] = 4.0;
+                break;
+            case "A-": 
+                gradeVal = 3.7;
+                letterToNum[i] = 3.7;
+                break;
+            case "B+": 
+                gradeVal = 3.3;
+                letterToNum[i] = 3.3;
+                break;    
+            case "B": 
+                gradeVal = 3.0;
+                letterToNum[i] = 3.0;
+                break;
+            case "B-": 
+                gradeVal = 2.7;
+                letterToNum[i] = 2.7;
+                break;    
+            case "C+": 
+                gradeVal = 2.3;
+                letterToNum[i] = 2.3;
+                break;    
+            case "C": 
+                gradeVal = 2.0;
+                letterToNum[i] = 2.0;
+                break;
+            case "C-": 
+                gradeVal = 1.7;
+                letterToNum[i] = 1.7;
+                break;    
+            case "D+":
+                gradeVal = 1.3;
+                letterToNum[i] = 1.3;
+                break;
+            case "D":
+                gradeVal = 1.0;
+                letterToNum[i] = 1.0;
+                break;    
+            case "F":
+                gradeVal = 0;
+                letterToNum[i] = 0;
+                break;    
+            case "FX":
+                gradeVal = 0;
+                letterToNum[i] = 0;
+                break;      
+            case "FZ":
+                gradeVal = 0;
+                letterToNum[i] = 0;
+                break;      
+                
+        }
+        
+            
+        }
+        
+        return double[] letterToNum;
+
+    }
+
+    public static void startDouble() {
 
     } 
 
