@@ -54,15 +54,23 @@ public class main {
          System.out.println("Would you like to calculate your grades by AA, BA, BB grading system or A, A-, B+ grading system? Type double for the first one and single for the second one");
          String choice = scan.next();
          if (choice.equalsIgnoreCase("double")){
-          startDouble(null);                                                      
+          extracted();                                                      
          }
          else if (choice.equalsIgnoreCase("single")) {
-          startSingle(null);
+          extracted2();
          }
          else {
             System.out.println("WRONG INPUT! TRY AGAIN!!!!");
             startMenu();
         }
+    }
+
+    private static void extracted2() {
+        startSingle(null);
+    }
+
+    private static void extracted() {
+        startDouble(null);
     }
 
     public static void startSingle(double[] singleLetterToNum) {
