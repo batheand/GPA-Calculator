@@ -54,10 +54,10 @@ public class main {
          System.out.println("Would you like to calculate your grades by AA, BA, BB grading system or A, A-, B+ grading system? Type double for the first one and single for the second one");
          String choice = scan.next();
          if (choice.equalsIgnoreCase("double")){
-          extracted();                                                      
+          startDouble();                                                      
          }
          else if (choice.equalsIgnoreCase("single")) {
-          extracted2();
+          startSingle();
          }
          else {
             System.out.println("WRONG INPUT! TRY AGAIN!!!!");
@@ -65,15 +65,9 @@ public class main {
         }
     }
 
-    private static void extracted2() {
-        startSingle(null);
-    }
+    
 
-    private static void extracted() {
-        startDouble(null);
-    }
-
-    public static void startSingle(double[] singleLetterToNum) {
+    public static void startSingle() {
         
         Scanner scan = new Scanner(System.in);
         System.out.println("Please enter the number of classes you have");
@@ -97,6 +91,9 @@ public class main {
         }
     
         double finalTotalCred = 0;
+
+        double [] singleLetterToNum = new double [classNo];
+        singleLetterToNum = singleTransformer(singleGrades, classNo);
 
         for (int i=0; i<classNo; i++) {
             finalTotalCred = (allCred[i]*singleLetterToNum[i]) + finalTotalCred; 
@@ -177,7 +174,7 @@ public class main {
 
     // ------------------------------------------------------------------------------------------------------------------------------
 
-    public static void startDouble(double[] doubleLetterToNum) {
+    public static void startDouble() {
         
         Scanner scan = new Scanner(System.in);
         System.out.println("Please enter the number of classes you have");
@@ -201,6 +198,9 @@ public class main {
         }
     
         double finalTotalCred = 0;
+
+        double [] doubleLetterToNum = new double [classNo];
+        doubleLetterToNum = singleTransformer(doubleGrades, classNo);
 
         for (int i=0; i<classNo; i++) {
             finalTotalCred = (allCred[i]*doubleLetterToNum[i]) + finalTotalCred; 
