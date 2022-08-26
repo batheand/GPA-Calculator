@@ -81,7 +81,7 @@ public class main {
         double allTotalCred = 0;
 
         for (int i = 0; i<classNo; i++) {
-            allTotalCred = allTotalCred + allCred[i];
+            allTotalCred += allCred[i];
         }
 
         System.out.println("Please enter your letter grades in the same order as the credits you entered beforehand");
@@ -96,13 +96,14 @@ public class main {
         singleLetterToNum = singleTransformer(singleGrades, classNo);
 
         for (int i=0; i<classNo; i++) {
-            finalTotalCred = (allCred[i]*singleLetterToNum[i]) + finalTotalCred; 
+            finalTotalCred += (allCred[i]*singleLetterToNum[i]); 
         }
     
         double singleGradeGPA = (finalTotalCred/allTotalCred);
        System.out.println("Your GPA is: " + singleGradeGPA);
         
-    
+        
+
     }
 
     public static double[] singleTransformer(String[] singleGrades, int classNo){
