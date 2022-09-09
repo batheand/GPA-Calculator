@@ -47,12 +47,13 @@ public class main {
         System.out.println("Your Average Is: " + result);
     }
 
+ // --------------------------------------------------------------------------------------------------------------
+
     public static void byLetter() {
-         Scanner scan = new Scanner(System.in);
          
-         
-         System.out.println("Would you like to calculate your grades by AA, BA, BB grading system or A, A-, B+ grading system? Type double for the first one and single for the second one");
-         String choice = scan.next();
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Would you like to calculate your grades by AA, BA, BB grading system or A, A-, B+ grading system? Type double for the first one and single for the second one");
+        String choice = scan.next();
          if (choice.equalsIgnoreCase("double")){
           startDouble();                                                      
          }
@@ -65,7 +66,7 @@ public class main {
         }
     }
 
-    
+// byLetter'da sorun yok    
 
     public static void startSingle() {
         
