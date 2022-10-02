@@ -1,10 +1,16 @@
 import java.util.*;
 
+/*GOKAY: I AM GONNA ADD SOME UI TO THIS HOPEFULLY MAKING IT A PROPPER PROJECT */
 
 public class main {
+   public static final String[] singleLetterNotes = new String[] {"A","A-","B","B-","C","C-","D","F","FX"};
+   public static final String[] doubleLetterNotes = new String[] {"AA","BA","BB","CB","CC","DC","DD","FF","FX"};
+   public static final double[] notes = new double[] {4.0, 3.5, 3.0, 2.5, 2.0, 1.5, 1.0, 0.5, 0.0};
+/*this was an attempt of library to use the fix indexes of all to calculate the transformation from letter to  */
     
     public static void main(String[] args) {
         startMenu();
+        
     }
 
     public static void startMenu() {
@@ -20,7 +26,6 @@ public class main {
             startMenu();
         }
     }
-
 
 
     public static void byNumber() {
@@ -47,216 +52,146 @@ public class main {
         System.out.println("Your Average Is: " + result);
     }
 
+ // --------------------------------------------------------------------------------------------------------------
+
     public static void byLetter() {
-         Scanner scan = new Scanner(System.in);
          
-         
-         System.out.println("Would you like to calculate your grades by AA, BA, BB grading system or A, A-, B+ grading system? Type double for the first one and single for the second one");
-         String choice = scan.next();
-         if (choice.equalsIgnoreCase("double")){
-          startDouble();                                                      
-         }
-         else if (choice.equalsIgnoreCase("single")) {
-          startSingle();
-         }
-         else {
+        Scanner scan = new Scanner(System.in);
+
+        double allTotalCred = 0;
+        double finalTotalCred = 0;
+        
+        System.out.println("Would you like to calculate your grades by AA, BA, BB grading system or A, A-, B+ grading system? Type double for the first one and single for the second one");
+        String choice = scan.next();
+        if(!(choice.equalsIgnoreCase("double")) && !(choice.equalsIgnoreCase("single"))  ){
             System.out.println("WRONG INPUT! TRY AGAIN!!!!");
             startMenu();
-        }
-    }
+            
+        }else{
 
-    
-
-    public static void startSingle() {
-        
-        Scanner scan = new Scanner(System.in);
         System.out.println("Please enter the number of classes you have");
         int classNo = scan.nextInt();
+
+        double [] transGrade = new double [classNo];
+
         System.out.println("Please enter the credits for classes in an order you have chosen");
         double allCred[] = new double [classNo];
         for (int i = 0; i<classNo; i++){
             allCred[i] = scan.nextDouble();
         }
-        
-        double allTotalCred = 0;
 
         for (int i = 0; i<classNo; i++) {
             allTotalCred += allCred[i];
         }
 
         System.out.println("Please enter your letter grades in the same order as the credits you entered beforehand");
-        String singleGrades[] = new String [classNo];
+        String[] grades = new String [classNo];
         for (int i = 0; i<classNo; i++){
-            singleGrades[i] = scan.next();
+            grades[i] = scan.next();
         }
-    
-        double finalTotalCred = 0;
+            if (choice.equalsIgnoreCase("double")){
+                transGrade = doubleTransformer(grades, classNo);                                                      
+            }
+            else if (choice.equalsIgnoreCase("single")) {
+                transGrade = singleTransformer(grades, classNo);
+            }
+           
 
-        double [] singleLetterToNum = new double [classNo];
-        singleLetterToNum = singleTransformer(singleGrades, classNo);
 
         for (int i=0; i<classNo; i++) {
-            finalTotalCred += (allCred[i]*singleLetterToNum[i]); 
+            finalTotalCred += (allCred[i]*transGrade[i]); 
         }
     
         double singleGradeGPA = (finalTotalCred/allTotalCred);
        System.out.println("Your GPA is: " + singleGradeGPA);
-        
-        
-
+        }
     }
 
     public static double[] singleTransformer(String[] singleGrades, int classNo){
         String gradeStr = " ";
-        double gradeVal = 0;
+        String[] gradeStrArr = singleGrades;
         double[] singleLetterToNum = new double[classNo];
         for(int i = 0; i<classNo; i++){
-            
+            gradeStr = gradeStrArr[i];
+
             switch (gradeStr) {
+
             case "A": 
-                gradeVal = 4.0;
-                singleLetterToNum[i] = 4.0;
+                
+            singleLetterToNum[i] = 4.0;
                 break;
             case "A-": 
-                gradeVal = 3.7;
-                singleLetterToNum[i] = 3.7;
+            singleLetterToNum[i] = 3.5;
                 break;
-            case "B+": 
-                gradeVal = 3.3;
-                singleLetterToNum[i] = 3.3;
-                break;    
             case "B": 
-                gradeVal = 3.0;
-                singleLetterToNum[i] = 3.0;
-                break;
+            singleLetterToNum[i] = 3.0;
+                break;    
             case "B-": 
-                gradeVal = 2.7;
-                singleLetterToNum[i] = 2.7;
-                break;    
-            case "C+": 
-                gradeVal = 2.3;
-                singleLetterToNum[i] = 2.3;
-                break;    
+            singleLetterToNum[i] = 2.5;
+                break;
             case "C": 
-                gradeVal = 2.0;
-                singleLetterToNum[i] = 2.0;
-                break;
+            singleLetterToNum[i] = 2.0;
+                break;    
             case "C-": 
-                gradeVal = 1.7;
-                singleLetterToNum[i] = 1.7;
+            singleLetterToNum[i] = 1.5;
                 break;    
-            case "D+":
-                gradeVal = 1.3;
-                singleLetterToNum[i] = 1.3;
+            case "D": 
+            singleLetterToNum[i] = 1.0;
                 break;
-            case "D":
-                gradeVal = 1.0;
-                singleLetterToNum[i] = 1.0;
-                break;    
-            case "F":
-                gradeVal = 0;
-                singleLetterToNum[i] = 0;
+            case "F": 
+            singleLetterToNum[i] = 0.5;
                 break;    
             case "FX":
-                gradeVal = 0;
-                singleLetterToNum[i] = 0;
-                break;      
-            case "FZ":
-                gradeVal = 0;
-                singleLetterToNum[i] = 0;
-                break;      
-                
+            singleLetterToNum[i] = 0;
+                break;
+            default:
+                System.out.println("ERROR: There is grades that does not exist in given grades");      
         }
              
       }
         
         return singleLetterToNum;
-    }
-
-    // ------------------------------------------------------------------------------------------------------------------------------
-
-    public static void startDouble() {
-        
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Please enter the number of classes you have");
-        int classNo = scan.nextInt();
-        System.out.println("Please enter the credits for classes in an order you have chosen");
-        double allCred[] = new double [classNo];
-        for (int i = 0; i<classNo; i++){
-            allCred[i] = scan.nextDouble();
-        }
-        
-        double allTotalCred = 0;
-
-        for (int i = 0; i<classNo; i++) {
-            allTotalCred = allTotalCred + allCred[i];
-        }
-
-        System.out.println("Please enter your letter grades in the same order as the credits you entered beforehand");
-        String doubleGrades[] = new String [classNo];
-        for (int i = 0; i<classNo; i++){
-            doubleGrades[i] = scan.next();
-        }
-    
-        double finalTotalCred = 0;
-
-        double [] doubleLetterToNum = new double [classNo];
-        doubleLetterToNum = singleTransformer(doubleGrades, classNo);
-
-        for (int i=0; i<classNo; i++) {
-            finalTotalCred = (allCred[i]*doubleLetterToNum[i]) + finalTotalCred; 
-        }
-    
-        double doubleGradeGPA = (finalTotalCred/allTotalCred);
-       System.out.println("Your GPA is: " + doubleGradeGPA);
-        
-    
-    }
+            
+      }
+             
 
     public static double[] doubleTransformer(String[] doubleleGrades, int classNo){
-        String gradeStr = " ";
-        double gradeVal = 0;
+        String[] gradeStrArr = doubleleGrades;
         double[] doubleLetterToNum = new double[classNo];
         for(int i = 0; i<classNo; i++){
-            
+           String gradeStr = gradeStrArr[i];
+
             switch (gradeStr) {
-            case "AA": 
-                gradeVal = 4.0;
+
+            case "AA":               
                 doubleLetterToNum[i] = 4.0;
                 break;
             case "BA": 
-                gradeVal = 3.5;
                 doubleLetterToNum[i] = 3.5;
                 break;
             case "BB": 
-                gradeVal = 3.0;
                 doubleLetterToNum[i] = 3.0;
                 break;    
             case "CB": 
-                gradeVal = 2.5;
                 doubleLetterToNum[i] = 2.5;
                 break;
             case "CC": 
-                gradeVal = 2.0;
                 doubleLetterToNum[i] = 2.0;
                 break;    
             case "DC": 
-                gradeVal = 1.5;
                 doubleLetterToNum[i] = 1.5;
                 break;    
             case "DD": 
-                gradeVal = 1.0;
                 doubleLetterToNum[i] = 1.0;
                 break;
             case "F": 
-                gradeVal = 0;
-                doubleLetterToNum[i] = 0;
+                doubleLetterToNum[i] = 0.5;
                 break;    
             case "FX":
-                gradeVal = 0;
                 doubleLetterToNum[i] = 0;
                 break;
-                  
+            default:
+                System.out.println("ERROR: There is grades that does not exist in given grades");      
         }
              
       }

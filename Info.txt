@@ -1,0 +1,7 @@
+This project is about a simple program to calculate your GPA either by number grades or letter grades. It uses a terminal UI and therefore it's simple
+ and efficient.
+
+This project is currently partially-finalized. The partners of the project, Batuhan Yıldız and Can Mızraklı, agreed on a work distribution where Batuhan
+will handle the calculate by number part and Can will handle the calculate by letter part.
+
+Batuhan Yıldız has succesfully finalized his part and Can Mızraklı is currently working on his part.
